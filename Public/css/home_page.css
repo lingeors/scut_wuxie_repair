@@ -1,0 +1,390 @@
+/* 
+***Author:Mervyn Fang
+***Description:CSS for the SSSS Enquity Project
+*/
+
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+a:link,a:visited,a:hover{text-decoration:none;border-style: hidden;color: inherit;}
+a:hover,a:active{outline:none;}
+ol,ul{list-style:none;margin:0;padding:0;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+body{
+	font-family: 微软雅黑,Arial;
+	font-size: 100%;
+	background:url(../img/bg.jpg);
+}
+.header img{
+	width: 100%;
+}
+.north img{
+	width: 100%;
+	margin-top: 20px;
+}
+.south img{
+	width: 100%;
+	margin-top:10px;
+}
+.wholecori{
+	margin-top: 20px;
+}
+.copyright{
+	text-align: center;
+}
+.copyright span{
+	color: #552828;
+	font-size: 13px;
+}
+.search{
+	margin-top: 10px;
+	margin-left: 4%;
+	text-align: center;
+}
+#search-box{
+	outline: none;
+	color: #552828;
+	height: 25px;
+	width: 80%;
+	font-size: 16px;
+	font-family: 微软雅黑,Arial;
+	float: left;
+	background-color: transparent;
+	border: 1px solid #552828;
+}
+.search .submit{
+	width: 14%;
+	background-color: #552828;
+	height: 29px;
+	float: left;
+}
+.search .submit img{
+	margin-top: 3px;
+}
+.protype .wstype{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+.protype .wstype span{
+	font-size: 36px;
+	color: #FFF;
+	line-height: 50px;
+}
+.protype .learn{
+	background-color: #9AE668;
+	margin-top: 30px;
+}
+.protype .dormi{
+	background-color: #FBEC6B;
+}
+.protype .school{
+	background-color: #4DBEF8;
+}
+.protype .slife{
+	background-color: #FE7676;
+}
+.protype .all{
+	background-color: #FE7676;
+	margin-top: 20px;
+}
+.typehead{
+	width: 100%;
+	height: 35px;
+	margin-top: 10px;
+	text-align: center;
+}
+.typehead1{
+	background-color: #FE7676;
+}
+.typehead2{
+	background-color: #FBEC6B;
+}
+.typehead3{
+	background-color: #4DBEF8;
+}
+.typehead4{
+	background-color: #FE7676;
+}
+.typehead5{
+	background-color: #B719D9;
+}
+.typehead span{
+	font-size: 20px;
+	color: #FFF;
+	line-height: 35px;
+}
+.prolist table{
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #E7E7EB;
+	text-align: center;
+}
+.prolist table tr:nth-child(1){
+	background-color: #FE7676;
+	color: #FFF;
+}
+.prolist2 table tr:nth-child(1){
+	background-color: #FBEC6B;
+	color: #FFF;
+}
+.prolist3 table tr:nth-child(1){
+	background-color: #4DBEF8;
+	color: #FFF;
+}
+.prolist4 table tr:nth-child(1){
+	background-color: #FE7676;
+	color: #FFF;
+}
+.prolist5 table tr:nth-child(1){
+	background-color: #B719D9;
+	color: #FFF;
+}
+.prolist table tr,td{
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+.prolist table tr{
+	height: 30px;
+}
+.prolist .changepage{
+	margin-top: 20px;
+	text-align: center;
+}
+.prolist .page{
+	padding: 5px;
+	height: 25px;
+	width: 20%;
+	/*margin-left: 2em;*/
+	color: #FFF;
+	text-align: center;
+	display: inline;
+	border: 1px solid #FE7676;
+	/*float: right;*/
+	background-color: #FE7676;
+	border-radius: 3px;
+}
+.prolist .page2{
+	margin-left: 10%;
+}
+.prolist table td:nth-child(1){
+	width: 50%;
+}
+.prolist table td:nth-child(2){
+	width: 36%;
+}
+.prolist table td:nth-child(3){
+	width: 14%;
+}
+.content{
+	color: #552828;
+}
+.content .title,.intro,.renew{
+	margin-top: 10px;
+	margin-left: 3%;
+}
+.content .good{
+	border: 1px solid #552828;
+	border-radius: 2px;
+	width: 20%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+    margin-top: 10px;
+	margin-left: 3%;
+}
+.content .score{
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    margin-top: 10px;
+	margin-left: 3%;
+    float: left;
+}
+.content .starsub{
+    border: 1px solid #552828;
+	border-radius: 2px;
+	width: 20%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+    display: inline;
+    margin-top: 10px;
+	float: left;
+	margin-left: 3%;
+}
+.content .comment{
+	margin-top: 10px;
+	margin-left: 3%;
+	display: block;
+}
+.content textarea{
+	height: 100px;
+	color: #552828;
+	font-size: 16px;
+	font-family: 微软雅黑,Arial;
+	outline: none;
+	background-color: transparent;
+	border: 1px solid #552828;
+}
+.content .inputcom .csubmit{
+	border: 1px solid #552828;
+	border-radius: 2px;
+	width: 20%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+    outline: none;
+	background-color: transparent;
+	font-size: 16px;
+	font-family: 微软雅黑,Arial;
+}
+.content .comment ul,li{
+	margin-top: 10px;
+    word-wrap: break-word;
+}
+.content .changepage{
+    margin-top: 20px;
+	text-align: center;
+}
+.content .page{
+	padding: 5px;
+	height: 20px;
+	width: 20%;
+	color: #552828;
+	text-align: center;
+	display: inline;
+	border: 1px solid #552828;
+	border-radius: 3px;
+}
+.content .page2{
+	margin-left: 10%;
+}
+.raise{
+	width: 90%;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+.raiseinfo{
+	outline: none;
+	color: #552828;
+	height: 25px;
+	margin-top: 10px;
+	width: 100%;
+	font-size: 16px;
+	font-family: 微软雅黑,Arial;
+	background-color: transparent;
+	border: 1px solid #552828;
+}
+.raisedata{
+	width: 100%;
+	color: #552828;
+	height: 150px;
+	outline: none;
+	margin-top: 10px;
+	background-color: transparent;
+	border: 1px solid #552828;
+	font-size: 16px;
+	font-family: 微软雅黑,Arial;
+}
+.raise .csubmit{
+	border: 1px solid #552828;
+	border-radius: 2px;
+	width: 20%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+    outline: none;
+	background-color: transparent;
+	font-size: 16px;
+	font-family: 微软雅黑,Arial;
+}
+.article{
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3% 3% 3% 3%;
+	border: 1px solid #552828;
+	width: 90%;
+}
+.article .manyintro{
+	font-family: 微软雅黑;
+	font-size: 16px;
+	color: #552828;
+
+}
+.tab{
+	margin-top: 20px;
+}
+.tab .tab1 img{
+	width: 31%;
+	text-align: center;
+	float: left;
+	margin-left: 2%;
+}
+.tab .tab2 img{
+	width: 31%;
+	text-align: center;
+	float: left;
+	margin-left: 2%;
+}
+.tab .tab3 img{
+	width: 31%;
+	text-align: center;
+	float: left;
+	margin-left: 2%;
+}
+/*#seltype{
+	outline: none;
+	color: #552828;
+	height: 25px;
+	margin-top: 10px;
+	width: 100%;
+	font-size: 16px;
+	font-family: 微软雅黑,Arial;
+	background-color: transparent;
+	border: 1px solid #552828;
+}*/
+.inputcom{
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+#comment_content{
+    width:90%;
+	color: #552828;
+	height: 150px;
+	outline: none;
+	margin-top: 20px;
+	background-color: transparent;
+	border: 1px solid #552828;
+	font-size: 16px;
+	font-family: 微软雅黑,Arial;
+}
+/*.raisepicrem::-webkit-input-placeholder::before{
+    display:block;
+    content:"提案内容(200字以内，若有照片请通过微信\A平台聊天窗口发给我们，并注明提案标题，\A谢谢！)";
+}*/

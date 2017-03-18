@@ -1,0 +1,43 @@
+<{extends file='layout.html'}>
+<{block name=head}> 
+      <style type="text/css" media="screen">
+
+        .maintitle{ font-weight;font-family:"微软雅黑";}
+      </style>
+<{/block}>
+<{block name=body}>
+    <!--以下就是填入数据库导出数据的部分-->
+ <div class="container">
+          <h2 class="maintitle">新建联系人信息</h2>
+          <form action="" method="" name="">
+             <div class="form-group">
+              <input type="text" name="title"class="form-control" placeholder="姓名..." maxlength="5" required/>
+             </div>
+             <div class="form-group">
+                 <div class="form-inline">
+                     <label for="category">性别：&nbsp&nbsp&nbsp</label>
+                     <select class="form-control" id="category" name="lost_found">
+                       <option value="lost" selected>男</option>                     
+                       <option value="found">女</option>
+                     </select>
+             </div>
+             </div>
+             <div class="form-group">
+                 <input type="text" name="title"class="form-control" placeholder="长号..." maxlength="11" required/>
+             </div>
+             <div class="form-group">
+                 <input type="text" name="title"class="form-control" placeholder="短号..." maxlength="6" required/>
+             </div>
+             <div class="form-group">
+                 <input type="text" name="title"class="form-control" placeholder="宿舍地址..." maxlength="12" required/>
+             </div>
+             <div class="form-group">
+                 <input type="text" name="title"class="form-control" placeholder="班级..." maxlength="8" required/>
+             </div>
+             <div class="form-group">
+                 <input type="text" name="title"class="form-control" placeholder="工作时间..." maxlength="12" required/>
+             </div>
+              <button type="submit" class="btn btn-info">提交</button>
+     </form></div>
+<{/block}>
+

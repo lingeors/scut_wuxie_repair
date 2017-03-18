@@ -1,0 +1,50 @@
+body{
+    margin:0px;
+background-color:#FFE4B5;
+}
+.instruction{
+background:url(../images/bg2.jpg);
+background-size: cover;
+}
+h1{
+    text-align: center;
+    height:40px;
+    font-size: 28px;
+    color: white;
+    background-color: #BA860B;
+    margin-top:0;padding:5px;
+}
+li{
+    font-size:20px;
+    margin-left:5px;
+}
+.message{
+    background-color: #F5EADC;
+}
+.sub{background-color:#DAA520;border:3px solid #DAA30B;
+    font-size:25px;padding-bottom:10px;
+    color:white;
+    font-family:"微软雅黑";
+    height:45px;width:250px;
+    -moz-border-radius:5px;      /* Gecko browsers */
+    -webkit-border-radius:5px;   /* Webkit browsers */
+    border-radius:5px; 
+    position:relative;left:40px;
+ 
+}
+.change{background-color:#6495ED;border:3px solid #6492ED;
+    font-size:25px;padding-bottom:10px;
+    color:white;
+    font-family:"微软雅黑";
+    height:45px;width:250px;
+    -moz-border-radius:5px;      /* Gecko browsers */
+    -webkit-border-radius:5px;   /* Webkit browsers */
+    border-radius:5px; 
+    position:relative;left:40px; margin-top: 5px;    
+}
+.footer {
+    text-align:center;
+    font-size:80%;
+    margin-top: 30px;
+    line-height:60%;
+}

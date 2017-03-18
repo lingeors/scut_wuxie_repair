@@ -1,0 +1,52 @@
+<{extends file='layout.html'}>
+<{block name=head}> 
+<style type="text/css">
+  .more{display: none;}
+</style>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('.show').click(function(){
+      $(this).next('.more').toggle('fast');
+    });
+  });
+</script>
+
+<{/block}>
+<{block name=body}>         
+    <!--以下就是从数据库导出数据的部分-->
+   <{section name=sn loop=$admin_infos}>
+    <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+            <img src="./Public/images/dot.png" width="25px" height="25px">
+              <div class="color">
+                  <ul>
+                    <div class="show">
+                      <li style="list-style-type:none;">
+                         <font color="black" ><span class="glyphicon glyphicon-user"></span>&nbsp;姓名：<{$admin_infos[sn].admin_name}></font>
+                      </li>
+                      <li style="list-style-type:none;">
+                          <font color="black" ><span class="glyphicon glyphicon-record"></span>当前联系人：<{$admin_infos[sn].on}></font>
+                      </li>
+                    </div>
+                    <div class="more">
+                        <li style="list-style-type:none;">
+                            <font color="black" ><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;长号：<{$admin_infos[sn].phone_number}></font>
+                        </li>
+                        <li style="list-style-type:none;">
+                           <font color="black" ><span class="glyphicon glyphicon-earphone"></span>&nbsp;短号：<{$admin_infos[sn].mobile_short_number}></font>
+                        </li>
+                        <li style="list-style-type:none;">
+                             <font color="black" ><span class="glyphicon glyphicon-wrench"></span>工作时间：<{$admin_infos[sn].operate_time}></font>
+                        </li>
+
+                          <a href="change.html"><button type="" class="btn btn-info">修改</button></a>
+                          <button type="" class="btn btn-default">删除</button>
+                     </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </nav>
+    <{/section}>
+<{/block}>

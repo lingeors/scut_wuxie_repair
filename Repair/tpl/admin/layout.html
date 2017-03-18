@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   	<title><{block name=title}>无协义修报名后台管理<{/block}></title>
+    <script src="./Public/jQuery/jquery-1.8.3.min.js"></script>
+    <link href="./Public/css/bootstrap.min.css" rel="stylesheet">
+     <style type="text/css" media="screen">
+        .color{color:#2a6496}
+         .footer {
+          text-align:center;
+          position: relative;
+          font-size:80%;
+          margin-top: 30px;
+          line-height:60%;
+        }
+        .li_width{width:32.8%;}
+        .hr_height{height:1px;position:relative;top:-10px;}
+        .dropdown-menu {
+              position: absolute;
+              top: 100%;
+              left: 0;
+              z-index: 1000;
+              display: none;
+              float: left;
+              min-width: 100px;
+              padding: 5px 0;
+              margin: 2px 0 0;
+              font-size: 14px;
+              text-align:center;
+              list-style: none;
+              background-color: #fff;
+              -webkit-background-clip: padding-box;
+                      background-clip: padding-box;
+              border: 1px solid #ccc;
+              border: 1px solid rgba(0, 0, 0, .15);
+              border-radius: 4px;
+              -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+                      box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            }
+             .welcome{position:relative;left:5%;top:-2%;
+              color:#2a6496;
+              font-family:"SketchFlow Print";
+          }
+     </style>
+	<{block name=head}><{/block}> <!-- 预留头部其他信息 -->
+</head>
+ <body>
+   <div class="container-fliud">
+       <ul class="nav nav-tabs" role="tablist">
+       <!--类型-->
+           <li class="li_width" role="presentation" class="dropdown" style="text-align: center; '微软雅黑'">
+               <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                   <span class="glyphicon glyphicon-home"></span><strong>管理平台首页</strong> <span class="caret"></span>
+               </a>
+               <ul class="dropdown-menu">
+                  <li role="presentation"><a href="admin.php?m=admin&flag=0">本周待处理信息</a></li> 
+                  <li role="presentation"><a href="admin.php?m=admin&flag=1">本周所有信息</a></li>
+                  <li role="presentation"><a href="admin.php?m=admin&flag=2">历史全部信息</a></li>
+               </ul>
+           </li>
+           <li class="li_width" role="presentation" style="text-align: center; '微软雅黑'"><a href="admin.php?m=admin&a=modifyInfo"><strong><sapn class="glyphicon glyphicon-plus"></sapn>修改联系人</strong></a></li>
+           <li class="li_width" role="presentation" style="text-align: center; '微软雅黑'"><a href="admin.php?m=admin&a=adminHistoryInfo"><strong><span class="glyphicon glyphicon-user"></span>15级联系人</strong></a></li>      
+       </ul>
+    </div>
+      <hr/><h1 class="welcome">Welcome~</h1>	
+      <{block name=body}><{/block}>
+	 <div class="footer"><br><p><span style="font-family:arial;">Copyright &copy; 2015华南理工大学无线电爱好者协会</span></p>
+	 <p>维修支持 by 华工无协 • 维修部</p>
+	<p>Power by无线电爱好者协会 • 信息部 </p>
+	</div>
+    <script src="./Public/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

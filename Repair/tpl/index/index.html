@@ -1,0 +1,97 @@
+<{extends file='layout.html'}>
+<{block name=head}>
+<link href="./Public/css/apply.css" rel="stylesheet">
+<script type="text/javascript" src="./Public/js/apply.js"></script>
+ <script src="./Public/jQuery/jquery-1.8.3.min.js"></script>
+<style type="text/css">
+    #hidden{display: none;}
+    .error{color:red;}
+    #info{color: #008000;font-weight: bold;}
+</style>
+ <script type="text/javascript">
+    jQuery(document).ready(function() {
+        $('#select').change(function(){
+            var value = $(this).children('option:selected').val();
+            if (value == 'other')
+                $('#hidden').css({'display': 'block', });
+            if (value != 'other')
+                 $('#hidden').css({'display': 'none',});
+        });
+
+        $('#myForm').submit(function(){
+            var dataValid = true;
+            $('#info').html('');
+            $('.required').each(function(){
+                var cur = $(this);
+                cur.next('span').remove();
+                if ($.trim(cur.val()) == '')
+                {
+                    if (cur.val()=='')
+                    cur.after('<span class="error">不能为空</span>');
+                    dataValid = false;
+                }
+            });
+
+            var other = $("input[name='other']");
+            other.next('span').remove();
+            if ($("select[name='type']").val() == 'other' && $.trim(other.val()) ==''){        
+                other.after('<span class="error">不能为空</span>');
+                    dataValid = false;
+            }
+
+            if (!dataValid)
+            {
+                $('#info').html('为了方便与您的联系，请填写所有必要信息');
+                return false;
+            }
+        });
+
+    });
+ </script>
+<{/block}>
+<{block name=body}>
+    
+ <div class="message"><br/>
+   <font color="#F4A460"><strong><li>立即预约<br/><hr/></li></strong></font>
+    </li>
+    <!-- 字段名须保持与数据表中字段相同 -->
+    <form action="index.php?m=index&a=itemInfo" name="sub_info" id="myForm" method="POST">
+        <font color="#BEAEBE" size="4">&nbsp;姓名<font color="red">*</font><br/>
+        <input type="text" name="username" value="<{$username}>" class="required" /><br/>
+        &nbsp;电话<font color="red">*</font><br/>
+        <input type="text" name="phone_number" value="<{$phone_number}>" class="required" /><br/>
+        &nbsp;短号<font color="red">*</font><br/>
+        <input type="text" name="mobile_short_number" value="<{$mobile_short_number}>"placeholder="无短号请填写0" class="required" /><br/>
+        &nbsp;宿舍<font color="red">*</font><br/>
+        <input type="text" name="domitory" value="<{$domitory}>" class="required" /><br/>
+       &nbsp;电器类型<font color="red">*</font><br/>
+
+        <{if $type == '' }>
+        <select name="type" id="select">
+            <option value="电风扇">电风扇</option>
+            <option value="台灯">台灯</option>
+            <option value="排插">排插</option>
+            <option value="电吹风">电吹风</option>
+            <option value="电磁炉">电磁炉</option>
+            <option value="热水壶">热水壶</option>
+            <option value="电饭煲">电饭煲</option>
+            <option value="耳机">耳机</option>
+            <option value="other">其他</option>
+        </select><br/>
+        <div id="hidden">
+            <br/>
+            <input type="text" name="other" placeholder="其他（请填写具体类型）"  value="<{$type}>"><br/>
+        </div>
+        <{else}>
+        <input type="text" name="type" value="<{$type}>" class="required" /><br/>
+        <{/if}>
+            请简述损坏情况<font color="red">*</font><br/></font>
+        <textarea name="app_condition" class="required"  id="" cols="30" rows="10"><{$app_condition}></textarea><br/>
+        <input type="hidden" name="date" value= "<{$wechat_id}>" />
+        <input type="hidden" name="id" value= "<{$id}>" />
+        <br/>
+        <span id="info"></span>
+        <br/>
+        <input class="sub" type="submit" value="提交报名" name="sub" />
+    </form>
+<{/block}>

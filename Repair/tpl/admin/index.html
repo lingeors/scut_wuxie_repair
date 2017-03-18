@@ -1,0 +1,112 @@
+<{extends file='layout.html'}>
+
+<{block name=head}> 
+    <style type="text/css">
+      .more{display: none;} 
+      .operate{
+         cursor: pointer;
+      }
+      .warming{
+         color: red;
+         border
+      }
+
+    </style>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $('.show').click(function(){
+          $(this).next().next('.more').toggle('fast');
+        });
+
+        $('.operate').click(function(){//修改电器状态时的触发函数
+           if ($(this).attr('opcode') == 02 || $(this).attr('opcode') == 22)
+           {//不通过时进行是否填写了理由的判断
+                if($.trim($(this).next('input').val()) == ''){
+                   $(this).next().css('border-color', 'red');
+                   return false;
+                }            
+           }
+           $.get( //检查通过则通过ajax将数据传输到后台处理
+            'index.php?m=admin&a=changeState',
+            {'data[]':[$(this).attr('opcode'), $(this).attr('id'), $(this).next('input').val()]},
+            function (returndata)
+            { //想要异步刷新，找不到元素，已疯 
+               if(returndata == 'fail')
+                  alert('提交失败，请重试');
+               else{
+                // $("#succe").text(returndata);
+                // alert($(this).parent().html());
+                   window.location.reload();
+               }
+            });
+        });
+         
+      });
+    </script>
+<{/block}>
+    <!--以下就是从数据库导出数据的部分-->
+<{block name=body}>
+  <{if $error eq "right"}>
+      暂无记录！
+  <{else}>
+  <h4><{$content}></h4>
+    <{section name=rn loop=$item}>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <img src="./Public/images/dot.png" width="25px" height="25px">
+              <div class="color">
+                  <ul>
+                      <div class="show">
+                          <li style="list-style-type:none;"><font color="black" ><span class="glyphicon glyphicon-user"></span>&nbsp;姓名：<{$item[rn].username}></font></li>
+                          <li style="list-style-type:none;"><font color="black" ><span class="glyphicon glyphicon-record"></span>&nbsp;目前状态：<span class="changestate"><{$item[rn].state_str}></span></font></li>
+                      </div>
+                      <div>
+                           <li style="list-style-type:none;">
+                            <{if $item[rn].state == 5 || $item[rn].state == 6 || $item[rn].state == 1}>
+                            <{else}>
+                            <font color="black" >
+                            <span class="glyphicon glyphicon-pushpin"></span>
+                            
+                            后台操作：
+                            <{/if}>
+                             <{if $item[rn].state == 0}>
+                                 <a class="operate" opcode="01" id="<{$item[rn].id}>">通过</a>
+                                 <a class="operate" opcode="02" id="<{$item[rn].id}>">不通过</a>&nbsp;&nbsp;<input name="remarks" placeholder="不通过原因" />
+                            <{elseif $item[rn].state == 2}>
+                                  <a class="operate" opcode="21" id="<{$item[rn].id}>">维修成功</a>
+                                  <a class="operate" opcode="22" id="<{$item[rn].id}>">维修失败</a>&nbsp;&nbsp;<input name="remarks" placeholder="维修失败原因" />
+                            <{elseif $item[rn].state == 3}> 
+                                  <a class="operate" opcode="31" id="<{$item[rn].id}>">已返还</a>
+                            <{elseif $item[rn].state == 4}>
+                                  <a class="operate" opcode="41" id="<{$item[rn].id}>">已返还</a>
+                            <{/if}>
+                            </font>
+                            </li>
+                      </div>
+                      <div class="more">
+                            <li style="list-style-type:none;"><font color="black" ><span class="glyphicon glyphicon-time"></span>&nbsp;报修时间：<{$item[rn].apply_time}></font></li>
+                            <li style="list-style-type:none;"><font color="black" ><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;电话：<{$item[rn].phone_number}></font></li>
+                            <li style="list-style-type:none;"><font color="black" ><span class="glyphicon glyphicon-earphone"></span>&nbsp;短号：<{$item[rn].mobile_short_number}></font></li>
+                            <li style="list-style-type:none;"><font color="black" ><span class="glyphicon glyphicon-calendar"></span>&nbsp;宿舍：<{$item[rn].domitory}></font></li>
+                            <li style="list-style-type:none;"><font color="black" ><span class="glyphicon glyphicon-certificate"></span>&nbsp;电器类型：<{$item[rn].type}></font></li>
+                            <li style="list-style-type:none;"><font color="black" >&nbsp;<span class="glyphicon glyphicon-wrench"></span>损坏情况：<{$item[rn].app_condition}></font></li>
+                            <{if $item[rn].state == 1 || $item[rn].state == 4 || $item[rn].state == 5}>
+                            <li style="list-style-type:none;"><font color="black" >&nbsp;<span class="glyphicon glyphicon-wrench"></span>失败或审核不通过原因：<{$item[rn].remarks}></font></li>
+                            <{/if}>
+                           
+                      </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <span id="succe"></span>
+      <{/section}>
+        <a href="<{$prev}>">上一页</a><a href="<{$next}>">下一页</a>
+        <br/>
+        <span>总条数：</span><{$count}><br/>
+        <span>总页数：</span><{$pagecount}><br/>
+  <{/if}>
+<{/block}>

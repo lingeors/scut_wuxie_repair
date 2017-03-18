@@ -1,0 +1,32 @@
+<{extends file='layout.html'}>
+<{block name=title}>个人报修信息<{/block}>
+<{block name=head}>
+<link href="./Public/css/modify.css" rel="stylesheet">
+<script type="text/javascript" src="./Public/js/modify.js"></script>
+<script type="text/javascript">
+    function modify()
+    {
+        window.location.href='index.php?m=index&a=index&flag=1&c=<{$wechat_id}>&d=<{$id}>';
+    }
+</script>
+<{/block}>
+<{block name=body}>
+<div class="message">
+    <li>个人报修信息<br/><hr/></li>
+   <font size="5" color="#F4A460">&nbsp;姓名：
+    &nbsp;<{$username}><br/>
+    &nbsp;电话：
+    &nbsp;<{$phone_number}><br/>
+    &nbsp;短号：
+    &nbsp;<{$mobile_short_number}><br/>
+    &nbsp;宿舍：
+    &nbsp;<{$domitory}><br/>
+    &nbsp;电器类型：
+    &nbsp;<{$type}><br/>
+        &nbsp;损坏情况：
+    &nbsp;&nbsp;&nbsp;<{$app_condition}><br/><br/>
+    </font>
+    <button class="change" type="button" onclick="modify()">修改信息</button>
+</div>
+
+<{/block}>
